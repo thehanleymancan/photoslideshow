@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PhoSlySho by MH</title>
+
+<style>
+/* -------------------------------------------------- */
+/* ROOT CONTAINER                                     */
+/* -------------------------------------------------- */
+
+.phoslysho {
+    width: 100%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    margin:10px auto;
+}
+
+/* Porto max width */
+.phoslysho--porto {
+    max-width: 280px;
+}
+
+/* Lando max width */
+.phoslysho--lando {
+max-width: 360px;
+  width:90%;
+}
+
+/* -------------------------------------------------- */
+/* TITLE                                               */
+/* -------------------------------------------------- */
+
+.phoslysho__title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* INDICATORS                                          */
+/* -------------------------------------------------- */
+
+.phoslysho__indicators {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.phoslysho__indicators button {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    background: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.phoslysho__indicators button.is-active {
+    background: #444;
+    color: #fff;
+}
+
+/* -------------------------------------------------- */
+/* VIEWPORT HEIGHTS BY ORIENTATION                     */
+/* -------------------------------------------------- */
+
+/* Porto GP: tall portrait frame */
+.phoslysho--porto .phoslysho__viewport {
+    height: 420px;
+}
+
+/* Lando GP: cinematic landscape frame */
+.phoslysho--lando .phoslysho__viewport {
+     height: 360px; 
+/*       height:inherit;*/
+}
+
+/* Shared viewport rules */
+.phoslysho__viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: none;
+}
+
+/* -------------------------------------------------- */
+/* SLIDES                                              */
+/* -------------------------------------------------- */
+
+.phoslysho__slides {
+    display: flex;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.phoslysho__slide {
+    min-width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------------------------------- */
+/* PHOTO HOLDER                                        */
+/* -------------------------------------------------- */
+
+.phoslysho__photoHolder {
+    flex: 1 1 auto;
+    background: #000; /* letterbox lives here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+}
+
+.phoslysho__photoHolder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* -------------------------------------------------- */
+/* CAPTION                                             */
+/* -------------------------------------------------- */
+
+.phoslysho__caption {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Here it is: a Portrait "porto" slideshow .. </h2>
+<div class="phoslysho phoslysho--porto">
+
+            <div class="phoslysho__title">The Beatles</div>
+    
+    <div class="phoslysho__indicators">
+                    <button 
+                data-slide="0" 
+                class="is-active"
+            >
+                1            </button>
+                    <button 
+                data-slide="1" 
+                class=""
+            >
+                2            </button>
+                    <button 
+                data-slide="2" 
+                class=""
+            >
+                3            </button>
+                    <button 
+                data-slide="3" 
+                class=""
+            >
+                4            </button>
+            </div>
+
+    <div class="phoslysho__viewport" >
+        <div class="phoslysho__slides" >
+
+            <div class="phoslysho__slide">
+
+                <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/paul.jpg" 
+                            alt="Paul McCartney portrait"
+                        >
+                    </div>
+
+                    <div class="phoslysho__caption">Paul McCartney </div>
+                    
+            </div><!--end of slide -->
+
+
+
+
+                            <div class="phoslysho__slide">
+
+                    <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/john.jpg" 
+                            alt="John Lennon portrait"
+                        >
+                    </div>
+
+                                            <div class="phoslysho__caption">
+                            John Lennon                        </div>
+                    
+                </div>
+                            <div class="phoslysho__slide">
+
+                    <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/george.jpg" 
+                            alt="George Harrison portrait"
+                        >
+                    </div>
+
+                                            <div class="phoslysho__caption">
+                            George Harrison                        </div>
+                    
+                </div>
+                            <div class="phoslysho__slide">
+
+                    <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/ringo.jpg" 
+                            alt="Ringo Starr portrait"
+                        >
+                    </div>
+
+                                            <div class="phoslysho__caption">
+                            Ringo Starr                        </div>
+                    
+                </div>
+            
+        </div>
+    </div>
+
+</div>
+
+<hr />
+<h2>Now, here is a landscape "lando" slideshow .. </h2>
+
+
+<div class="phoslysho phoslysho--lando">
+
+            <div class="phoslysho__title">Cream</div>
+    
+    <div class="phoslysho__indicators">
+                    <button 
+                data-slide="0" 
+                class="is-active"
+            >
+                1            </button>
+                    <button 
+                data-slide="1" 
+                class=""
+            >
+                2            </button>
+                    <button 
+                data-slide="2" 
+                class=""
+            >
+                3            </button>
+
+            </div>
+
+    <div class="phoslysho__viewport" >
+        <div class="phoslysho__slides" >
+
+                            <div class="phoslysho__slide">
+
+                    <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/ginger.jpg" 
+                            alt="Ginger Baker"
+                        >
+                    </div>
+
+                                            <div class="phoslysho__caption">
+                            Ginger Baker                        </div>
+                    
+                </div>
+                            <div class="phoslysho__slide">
+
+                    <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/jack.jpg" 
+                            alt="Jack Bruce lando"
+                        >
+                    </div>
+
+                    <div class="phoslysho__caption">Jack Bruce </div>
+                    
+                </div>
+                            <div class="phoslysho__slide">
+
+                    <div class="phoslysho__photoHolder">
+                        <img 
+                            src="photos/eric.jpg" 
+                            alt="Eric Clapton lando"
+                        >
+                    </div>
+
+                    <div class="phoslysho__caption">
+                            Eric Clapton </div>
+                    
+                </div>
+ 
+    </div>
+
+</div>
+
+
+
+<script src="slideshow.js"></script>
+</body>
+</html>
